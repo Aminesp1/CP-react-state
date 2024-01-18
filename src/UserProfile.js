@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import img from "./profilePicture.jpg";
+import './UserProfile.css';
 
-class App extends Component {
+class UserProfile extends Component {
   state = {
     person: {
-      fullName: 'Amine Mazhoud',
-      bio: 'Life is now !',
+      fullName: 'John Doe',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       // Put the following line with the correct image filename in the public folder
-      imgSrc: img,
+      imgSrc: process.env.PUBLIC_URL + '/profile_picture.jpg',
       profession: 'Software Developer',
     },
     show: false,
@@ -19,7 +18,7 @@ class App extends Component {
     const { show } = this.state;
 
     return (
-      <div className="App">
+      <div className="UserProfile">
         <button onClick={this.toggleShow}>Toggle Profile</button>
         {show && this.renderPerson()}
         <p>Time since mount: {this.state.mountTime} seconds</p>
@@ -57,4 +56,4 @@ class App extends Component {
   };
 }
 
-export default App;
+export default UserProfile;
